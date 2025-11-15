@@ -5,6 +5,10 @@ import 'package:prac5/features/auth/bloc/auth_bloc.dart';
 import 'package:prac5/features/auth/bloc/auth_event.dart';
 import 'package:prac5/features/auth/bloc/auth_state.dart';
 
+const Color _authPrimaryColor = Color(0xFF00695C);
+const Color _authSecondaryColor = Color(0xFF26A69A);
+const Color _authAccentColor = Color(0xFFFFC107);
+
 class AuthScreen extends StatefulWidget {
   const AuthScreen({super.key});
 
@@ -65,11 +69,14 @@ class _AuthScreenState extends State<AuthScreen> {
       },
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
-              colors: [colorScheme.primary, colorScheme.secondary],
+              colors: [
+                _authSecondaryColor,
+                _authPrimaryColor,
+              ],
             ),
           ),
           child: SafeArea(
@@ -103,14 +110,14 @@ class _AuthScreenState extends State<AuthScreen> {
                               Icon(
                                 Icons.check_circle_outline,
                                 size: 80,
-                                color: colorScheme.primary,
+                                color: _authAccentColor,
                               ),
                               const SizedBox(height: 24),
                               Text(
                                 isLogin ? 'Вход' : 'Регистрация',
                                 style: theme.textTheme.headlineMedium?.copyWith(
                                   fontWeight: FontWeight.bold,
-                                  color: colorScheme.primary,
+                                  color: _authPrimaryColor,
                                 ),
                               ),
                               const SizedBox(height: 8),
@@ -190,8 +197,8 @@ class _AuthScreenState extends State<AuthScreen> {
                                       ? null
                                       : () => _submit(context, isLogin),
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: colorScheme.primary,
-                                    foregroundColor: colorScheme.onPrimary,
+                                    backgroundColor: _authPrimaryColor,
+                                    foregroundColor: Colors.white,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(16),
                                     ),
@@ -227,6 +234,9 @@ class _AuthScreenState extends State<AuthScreen> {
                                         );
                                         _formKey.currentState?.reset();
                                       },
+                                style: TextButton.styleFrom(
+                                  foregroundColor: _authAccentColor,
+                                ),
                                 child: Text(
                                   isLogin
                                       ? 'Нет аккаунта? Зарегистрируйтесь'
