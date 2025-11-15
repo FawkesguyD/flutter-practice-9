@@ -4,6 +4,7 @@
 знакомство с Bloc;
 знакомство с Riverpod;
 знакомство с MobX
+store connection
 ```
 
 ## Run
