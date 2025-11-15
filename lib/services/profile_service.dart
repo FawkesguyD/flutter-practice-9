@@ -1,5 +1,4 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:prac5/services/image_service.dart';
 import 'package:prac5/core/di/service_locator.dart';
 
 class UserProfile {
@@ -30,8 +29,6 @@ class ProfileService {
   static final ProfileService _instance = ProfileService._internal();
   factory ProfileService() => _instance;
   ProfileService._internal();
-
-  final ImageService _imageService = ImageService();
 
   static const String _keyUserId = 'user_id';
   static const String _keyNickname = 'user_nickname';

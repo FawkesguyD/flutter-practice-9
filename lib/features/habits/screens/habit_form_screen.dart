@@ -85,7 +85,7 @@ class _HabitFormScreenState extends State<HabitFormScreen> {
               ),
               const SizedBox(height: 12),
               DropdownButtonFormField<String>(
-                value: _selectedGenre,
+                initialValue: _selectedGenre,
                 items: AppConstants.genres
                     .map((g) => DropdownMenuItem(value: g, child: Text(g)))
                     .toList(),

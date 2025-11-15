@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prac5/features/habits/bloc/habits_bloc.dart';
 import 'package:prac5/features/habits/bloc/habits_state.dart';
+import 'package:prac5/features/habits/widgets/habit_tile.dart';
 
 class PlannedHabitsScreen extends StatelessWidget {
   const PlannedHabitsScreen({super.key});
@@ -19,10 +20,7 @@ class PlannedHabitsScreen extends StatelessWidget {
         }
         return ListView.builder(
           itemCount: items.length,
-          itemBuilder: (_, i) => ListTile(
-            title: Text(items[i].title),
-            subtitle: Text(items[i].author),
-          ),
+          itemBuilder: (_, i) => HabitTile(habit: items[i]),
         );
       },
     );

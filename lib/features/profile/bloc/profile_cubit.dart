@@ -1,7 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prac5/features/profile/bloc/profile_state.dart';
 import 'package:prac5/services/profile_service.dart';
-import 'package:prac5/core/di/service_locator.dart';
 import 'package:prac5/services/logger_service.dart';
 
 class ProfileCubit extends Cubit<ProfileState> {

@@ -7,7 +7,7 @@ import 'package:prac5/core/di/service_locator.dart';
 import 'package:prac5/core/bloc/app_bloc_observer.dart';
 import 'package:prac5/services/logger_service.dart';
 
-const bool RESET_IMAGE_CACHE_ON_START = true;
+const bool resetImageCacheOnStart = true;
 
 const String _keyUsedImages = 'used_images';
 const String _keyAvailableImages = 'available_images';
@@ -15,7 +15,7 @@ const String _keyUsedAvatars = 'used_avatars';
 const String _keyAvailableAvatars = 'available_avatars';
 
 Future<void> _resetImageStateIfNeeded() async {
-  if (!RESET_IMAGE_CACHE_ON_START) return;
+  if (!resetImageCacheOnStart) return;
 
   try {
     final prefs = await SharedPreferences.getInstance();

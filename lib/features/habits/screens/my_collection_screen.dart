@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prac5/features/habits/bloc/habits_bloc.dart';
 import 'package:prac5/features/habits/bloc/habits_state.dart';
+import 'package:prac5/features/habits/widgets/habit_tile.dart';
 
 class MyCollectionScreen extends StatelessWidget {
   const MyCollectionScreen({super.key});
@@ -31,7 +32,7 @@ class MyCollectionScreen extends StatelessWidget {
             itemCount: habits.length,
             itemBuilder: (context, index) {
               final h = habits[index];
-              return ListTile(title: Text(h.title), subtitle: Text(h.author));
+              return HabitTile(habit: h);
             },
           );
         },

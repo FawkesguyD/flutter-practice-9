@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prac5/features/habits/bloc/habits_bloc.dart';
 import 'package:prac5/features/habits/bloc/habits_state.dart';
+import 'package:prac5/features/habits/widgets/habit_tile.dart';
 
 class QualityScreen extends StatelessWidget {
   const QualityScreen({super.key});
@@ -18,11 +19,7 @@ class QualityScreen extends StatelessWidget {
         if (rated.isEmpty) return const Center(child: Text('Нет оценок'));
         return ListView.builder(
           itemCount: rated.length,
-          itemBuilder: (_, i) => ListTile(
-            leading: const Icon(Icons.star),
-            title: Text(rated[i].title),
-            trailing: Text('${rated[i].rating}'),
-          ),
+          itemBuilder: (_, i) => HabitTile(habit: rated[i]),
         );
       },
     );

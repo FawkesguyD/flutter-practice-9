@@ -53,7 +53,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
       ),
     );
 
-    if (confirmed == true && mounted) {
+    if (!context.mounted) return;
+
+    if (confirmed == true) {
       context.read<AuthBloc>().add(const LogoutRequested());
     }
   }

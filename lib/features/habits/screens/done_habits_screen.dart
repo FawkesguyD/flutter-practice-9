@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prac5/features/habits/bloc/habits_bloc.dart';
 import 'package:prac5/features/habits/bloc/habits_state.dart';
+import 'package:prac5/features/habits/widgets/habit_tile.dart';
 
 class DoneHabitsScreen extends StatelessWidget {
   const DoneHabitsScreen({super.key});
@@ -14,12 +15,12 @@ class DoneHabitsScreen extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }
         final items = state.doneHabitsList;
+        if (items.isEmpty) {
+          return const Center(child: Text('Нет выполненных привычек'));
+        }
         return ListView.builder(
           itemCount: items.length,
-          itemBuilder: (_, i) => ListTile(
-            title: Text(items[i].title),
-            subtitle: Text(items[i].author),
-          ),
+          itemBuilder: (_, i) => HabitTile(habit: items[i]),
         );
       },
     );

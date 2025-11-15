@@ -4,7 +4,6 @@ import 'package:prac5/features/auth/bloc/auth_state.dart';
 import 'package:prac5/services/auth_service.dart';
 import 'package:prac5/services/logger_service.dart';
 import 'package:prac5/core/di/service_locator.dart';
-import 'package:prac5/services/profile_service.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final AuthService _authService;
