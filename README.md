@@ -1,7 +1,9 @@
 # PRAC 9
 
 ```
-Работа с InheritedWidget
+знакомство с Bloc;
+знакомство с Riverpod;
+знакомство с MobX
 ```
 
 ## Run
